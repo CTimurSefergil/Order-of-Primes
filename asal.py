@@ -2,14 +2,14 @@ from simple_colors import *
 
 
 def main():
-    Satır = int(input("Kaç Satır İstersiniz ? "))
-    Kaç_Satır(Satır)
+    line = int(input("How many lines do you want ? "))
+    How_Many(line)
 
 
-def Asal_Mı(Sayı):
-    if Sayı > 1:
-        for i in range(2, int(Sayı / 2 + 1)):
-            if Sayı % i == 0:
+def İs_Prime(numb):
+    if numb > 1:
+        for i in range(2, int(numb / 2 + 1)):
+            if numb % i == 0:
                 return False
         else:
             return True
@@ -17,18 +17,18 @@ def Asal_Mı(Sayı):
         return False
 
 
-def Kaç_Satır(Satır):
-    x = int(input("Kaçıncı Satırdan Başlasın ? "))
-    İlk = x + x * 5
-    for i in range(Satır):
+def How_Many(Line):
+    x = int(input("From which line do you want to start ? "))
+    first = x + x * 5
+    for i in range(Line):
         for n in range(6):
-            if Asal_Mı(İlk) == True:
-                print(green(İlk), end=" ")
-                İlk += 1
+            if İs_Prime(first) == True:
+                print(green(first), end=" ")
+                first += 1
 
             else:
-                print((İlk), end=" ")
-                İlk += 1
+                print((first), end=" ")
+                first += 1
         print("")
 
 
